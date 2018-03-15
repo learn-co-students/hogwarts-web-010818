@@ -1,12 +1,11 @@
 import React from 'react';
-import Cherub from '../hog-imgs/cherub.jpg'
 
 const HogCard = (props) => {
   const {name, specialty, greased, weight_ratio, highest_medal, img_src} = props.hogInfo
   return (<div className="ui eight wide column">
             <div className="ui card">
               <div className="image">
-                <img src={Cherub} />
+                <img src={require(`../hog-imgs/${name.toLowerCase().replace(/ /g,"_")}.jpg`)} />
               </div>
               <div className="content">
                 <p className="header">{ name }</p>
