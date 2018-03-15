@@ -12,7 +12,7 @@ class HogsList extends Component {
     })
 
     return(
-      <div className="hog-container">
+      <div className="hog-container ui cards">
         {hogCards}
       </div>
     )

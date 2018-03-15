@@ -16,16 +16,20 @@ class HogCard extends Component {
 
   render() {
     const img_path = this.props.hog.name.toLowerCase().replace(/ /g,"_");
-    const details = <div>
-      <p>{this.props.hog.specialty}</p>
+    const details = <div className="extra content">
+      <p>Specialty: {this.props.hog.specialty}</p>
       <p>{this.props.hog.greased ? 'greased' : 'not greased'}</p>
-      <p>{this.props.hog['highest medal achieved']}</p>
-      <p>{this.props.hog['weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water']}</p>
+      <p>Highest meda: {this.props.hog['highest medal achieved']}</p>
+      <p>Weight: {this.props.hog['weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water']}</p>
     </div>
     return (
-      <div onClick={this.toggleDetails}>
-        <img src={require(`../hog-imgs/${img_path}.jpg`)}></img>
-        <h1>{this.props.hog.name}</h1>
+      <div onClick={this.toggleDetails} className="card">
+        <div className="image">
+          <img src={require(`../hog-imgs/${img_path}.jpg`)}></img>
+        </div>
+        <div className="content">
+          <div className="header">{this.props.hog.name}</div>
+        </div>
         {this.state.clicked ? details : null}
       </div>
     )

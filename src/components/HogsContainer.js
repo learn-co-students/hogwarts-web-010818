@@ -56,8 +56,13 @@ class HogsContainer extends Component {
   render() {
     return(
       <div className="hog-container">
-        < HogFilter handleSelect={this.sortPigs} handleCheck={this.filterPigs}/>
-        < HogsList hogs={this.state.hogs} />
+        <div className="ui rasied segment">
+          < HogFilter handleSelect={this.sortPigs} handleCheck={this.filterPigs}/>
+        </div>
+        <div className="ui raised segment">
+          < HogsList hogs={this.state.hogs} />
+        </div>
+
       </div>
     )
   }

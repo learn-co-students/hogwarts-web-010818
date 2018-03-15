@@ -12,13 +12,18 @@ class HogFilter extends Component {
 
   render() {
     return (
-      <div>
-        <select onChange={this.updateSort}>
-          <option value="name">Name</option>
-          <option value="weight">Weight</option>
-        </select>
-        Greased
-        <input type="checkbox" name="Greased" onChange={this.updateFilter}></input>
+      <div className="ui form">
+        <div className="inline field">
+          <label>Sort by</label>
+          <select onChange={this.updateSort}>
+            <option value="name">Name</option>
+            <option value="weight">Weight</option>
+          </select>
+        </div>
+        <div className="ui toggle checkbox">
+          <input onChange={this.updateFilter} type="checkbox" name="greased" tabIndex="0" ></input>
+          <label>Show only greased</label>
+        </div>
       </div>
     )
   }
