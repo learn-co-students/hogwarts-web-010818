@@ -25,7 +25,7 @@ class Nav extends React.Component {
                 onChange={this.handleChangeSort}
                 value={this.state.sortValue}>
           <option value="name">Name</option>
-          <option value="weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water">Weight Ratio</option>
+          <option value="weight_ratio">Weight Ratio</option>
           <option value="greased">Greased</option>
         </select>
       </div>

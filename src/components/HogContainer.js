@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import hogs from '../porkers_data'
+import HogCard from './HogCard'
+import uuid from 'uuid'
 
 export default class HogContainer extends React.Component {
   state = {
@@ -28,9 +30,13 @@ export default class HogContainer extends React.Component {
   }
 
   render() {
-    console.log(this.filterHogs())
+
+    const hogCards = this.filterHogs().map((hog) => {
+      return <HogCard hogInfo={hog} key={uuid()}/>
+    })
     return (
       <div className="ui grid container">
+        {hogCards}
       </div>
     )
   }
