@@ -5,13 +5,15 @@ import HogContainer from './HogContainer'
 
 class App extends Component {
   state = {
-    filter: 'name'
+    filter: 'name',
+    reset: false
   }
 
   handleSort = filter => {
     this.setState(
       {
-        filter: filter
+        filter: filter,
+        reset: true
       }
     );
   }
@@ -20,7 +22,7 @@ class App extends Component {
     return (
       <div className="App">
           <Nav handleSort={this.handleSort} />
-          <HogContainer filter={this.state.filter}/>
+          <HogContainer reset={this.state.reset} filter={this.state.filter}/>
       </div>
     )
   }

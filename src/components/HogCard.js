@@ -1,18 +1,23 @@
 import React from 'react';
 
 const HogCard = (props) => {
-  const {name, specialty, greased, weight_ratio, highest_medal } = props.hogInfo
+  const {name, specialty, greased, weight_ratio, highest_medal, gif } = props.hogInfo
 return (
 	<div className="ui eight wide column">
 		<div className="ui card">
 			<div className="image">
-				<img
+{/*				<img
 					src={require(`../hog-imgs/${name
 						.toLowerCase()
 						.replace(/ /g, "_")}.jpg`)}
 				  alt="this is some pig!"
         />
-			</div>
+*/}
+    <img
+			src={ gif }
+		  alt="this is some pig!"
+        />
+  </div>
 			<div className="content">
 				<p className="header">{name}</p>
         {(props.details === true) ?
