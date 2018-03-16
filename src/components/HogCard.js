@@ -18,7 +18,7 @@ return (
         {(props.details === true) ?
   				<div className="description">
   					<p>Specialty: {specialty}</p>
-  					<p>{(props.hogInfo.greased) ? "Greased" : "Not Greased"}</p>
+  					<p>{ greased ? "Greased" : "Not Greased"}</p>
   					<p>Weight Ratio to Fridge: {weight_ratio}</p>
   					<p>Highest Medal Achieved: {highest_medal}</p>
             <button className="ui button" onClick={() => props.handleHideHogDetails(props.hogInfo)}>Hide Details</button>

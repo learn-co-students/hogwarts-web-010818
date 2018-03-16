@@ -38,19 +38,17 @@ export default class HogContainer extends React.Component {
   };
 
   showDetails = (hog) => {
-    console.log("show details")
     let newArray = [...this.state.hogsWithDetails, hog]
     this.setState({
       hogsWithDetails: newArray
-    }, () => console.log(this.state.hogsWithDetails[0]));
+    });
   }
 
   hideDetails = (hog) => {
-    console.log("show details")
     let newArray = this.state.hogsWithDetails.filter((hiddenHog) => hiddenHog !== hog)
     this.setState({
       hogsWithDetails: newArray
-    }, () => console.log(this.state.hogsWithDetails[0]));
+    });
   }
 
   render() {
