@@ -15,12 +15,19 @@ return (
 			</div>
 			<div className="content">
 				<p className="header">{name}</p>
-				<div className="description">
-					<p>Specialty: {specialty}</p>
-					<p>Greased: {greased}</p>
-					<p>Weight Ratio to Fridge: {weight_ratio}</p>
-					<p>Highest Medal Achieved: {highest_medal}</p>
-				</div>
+        {(props.details === true) ?
+  				<div className="description">
+  					<p>Specialty: {specialty}</p>
+  					<p>{(props.hogInfo.greased) ? "Greased" : "Not Greased"}</p>
+  					<p>Weight Ratio to Fridge: {weight_ratio}</p>
+  					<p>Highest Medal Achieved: {highest_medal}</p>
+            <button className="ui button" onClick={() => props.handleHideHogDetails(props.hogInfo)}>Hide Details</button>
+  				</div>
+        :
+        <div className="description">
+          <button className="ui button" onClick={() => props.handleShowHogDetails(props.hogInfo)}>See Details</button>
+        </div>
+        }
 			</div>
 			<div
 				className="ui bottom attached button"
