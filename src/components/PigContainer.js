@@ -15,10 +15,11 @@ export default class PigContainer extends React.Component {
 
   applyFilter = (filterKeyword) => {
     let allPigs = [...hogs];
+    let weight = 'weight as a ratio of hog to LG - 24.7 Cu. Ft. French Door Refrigerator with Thru-the-Door Ice and Water';
     if (filterKeyword === 'greased') {
       return allPigs.filter((pig) => ( pig.greased ))
-    } else if (filterKeyword === 'weight') {
-      return allPigs.sort((a, b) => ( a.weight - b.weight ))
+    } else if (filterKeyword === weight) {
+      return allPigs.sort((a, b) => ( a[weight] - b[weight] ))
     } else if (filterKeyword === 'name') {
       return allPigs.sort((a, b) => {
         if (a.name > b.name) {
